@@ -11,6 +11,10 @@ function createSquare(num){
     square.innerText = num;
 
     // BONUS AL CLICK CAMBIA COLORE
+    square.addEventListener('click', function(){
+        this.classList.toggle('clicked')
+        console.log(this, `Numero del quadrato: ${num}`)
+    })
 
     // Faccio tornare il risultato
     return square;
@@ -18,7 +22,6 @@ function createSquare(num){
 
 // RECUPERO IL CONTENITORE DEI QUADRATI/GRIGLIA
 const griglia = document.getElementById('griglia');
-
 
 // ESEGUO UN CICLO CHE MOLTIPLICHI LA QUANTITà DI QUADRATI CHE VOGLIO AVERE NELLA GRIGLIA
 for(let i = 0; i< 100; i++){
