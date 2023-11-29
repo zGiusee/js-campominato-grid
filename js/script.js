@@ -13,22 +13,36 @@ function createSquare(num){
     // BONUS AL CLICK CAMBIA COLORE
     square.addEventListener('click', function(){
         this.classList.toggle('clicked')
-        console.log(this, `Numero del quadrato: ${num}`)
+
+        // Mostro a video quale cella sia stata cliccata
+        console.log(`Numero della cella: ${num}`)
     })
 
     // Faccio tornare il risultato
     return square;
 }
 
+// CREO LA FUNZIONE CHE ESEGUA UN CICLO E CHE MOLTIPLICHI LA QUANTITà 
+// DI QUADRATI CHE VOGLIO AVERE NELLA GRIGLIA
+function generateGrid(){
+    for(let i = 0; i< 100; i++){
+
+        // Richiamo la funzione con la variabile square
+        let square = createSquare(i+1);
+    
+        // Appendo i quadrati alla griglia
+        griglia.appendChild(square);
+    }    
+}
+
 // RECUPERO IL CONTENITORE DEI QUADRATI/GRIGLIA
 const griglia = document.getElementById('griglia');
 
-// ESEGUO UN CICLO CHE MOLTIPLICHI LA QUANTITà DI QUADRATI CHE VOGLIO AVERE NELLA GRIGLIA
-for(let i = 0; i< 100; i++){
+// RECUPERO IL BOTTONE CHE GENERERà LA GRIGLIA
+let playButton = document.getElementById('play');
 
-    // Richiamo la funzione con la variabile square
-    let square = createSquare(i+1);
+// AGGIUNGO AL BOTTONE LA FUNZIONE PRECEDENTEMENTE CREATA
+playButton.addEventListener('click', function(){
 
-    // Appendo i quadrati alla griglia
-    griglia.appendChild(square);
-}
+    generateGrid();
+})
