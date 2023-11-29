@@ -13,4 +13,8 @@ const griglia = document.getElementById('griglia');
 
 
 // ESEGUO UN CICLO CHE MOLTIPLICHI LA QUANTITà DI QUADRATI CHE VOGLIO AVERE NELLA GRIGLIA
-for(let i = 0; i< 100 )
+for(let i = 0; i< 100; i++){
+    let square = createSquare();
+
+    griglia.appendChild(square);
+}
