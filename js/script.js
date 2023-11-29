@@ -25,6 +25,9 @@ function createSquare(num){
 // CREO LA FUNZIONE CHE ESEGUA UN CICLO E CHE MOLTIPLICHI LA QUANTITà 
 // DI QUADRATI CHE VOGLIO AVERE NELLA GRIGLIA
 function generateGrid(){
+
+    griglia.innerHTML = "";
+
     for(let i = 0; i< 100; i++){
 
         // Richiamo la funzione con la variabile square
